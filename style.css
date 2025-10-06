@@ -83,7 +83,7 @@ nav span{
     color: rgb(183,198,212);
 }
 #img1{
-    width: 700px;
+    width: 324px;
     margin-left: 900px;
 }
 
@@ -133,7 +133,7 @@ nav span{
     margin: 130px;
 }
 
-@media screen and (max-width: 760px){
+@media screen and (max-width: 700px){
     nav{
         flex-direction: column;
         text-align: center;

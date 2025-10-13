@@ -6,12 +6,13 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+ 
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding: 20px 120px;
+    padding: 20px 5%;  
     background-color: rgb(247,246,244);
     position: sticky;
     top: 0px;
@@ -44,7 +45,8 @@ nav span{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 120px;
+    
+    padding: 20px 5%; 
     background-color: rgb(236,232,217);
 }
 .segment-A li{
@@ -71,20 +73,26 @@ nav span{
 }
 .text{
     padding: 10px;
-    width: 500px;
+     
+    max-width: 500px;
+    width: 100%;
     background-color: white;
 }
 
 #ser{
     width: 20px;
-    margin-left: 400px;
+    
+    margin-left: auto;
 }
 .c{
     color: rgb(183,198,212);
 }
 #img1{
-    width: 324px;
-    margin-left: 900px;
+   
+    width: 40%;
+    max-width: 324px;
+     
+    margin-left: 0;
 }
 
 .segment-B{
@@ -93,7 +101,8 @@ nav span{
     align-items: center;
     flex-wrap: wrap;
     margin-top: 50px;
-    padding: 20px 120px;
+     
+    padding: 20px 5%; 
 }
 .tayor a{
     text-decoration: none;
@@ -103,9 +112,15 @@ nav span{
 .segment-C{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;  
     flex-wrap: wrap;
-    padding: 20px 120px;
+     
+    padding: 20px 5%; 
+}
+.segment-C > div {
+     
+    width: calc(25% - 20px); 
+    margin-bottom: 20px;
 }
 .part-A{
     padding: 20px;
@@ -114,14 +129,16 @@ nav span{
 }
 
 #A{
-    width: 350px;
+   
+    width: 100%;
     height: 270px;
+    object-fit: cover;  
 }
 
 .btn{
     padding: 10px;
     background-color: rgb(215,127,129);
-    width: 300px;
+    width: 100%;  
     height: 50px;
     border-radius: 10px;
     border-color: white;
@@ -130,33 +147,166 @@ nav span{
 }
 
 .last{
-    margin: 130px;
+     
+    margin: 130px 5%;
 }
 
-@media screen and (max-width: 700px){
-    nav{
-        flex-direction: column;
-        text-align: center;
+
+ 
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; 
+}
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(110,121,141);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0; 
+}
+.hamburger-icon::before {
+    transform: translateY(-8px);
+}
+.hamburger-icon::after {
+    transform: translateY(8px);
+}
+.nav-links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%; 
+}
+
+
+ 
+@media (max-width: 1200px) {
+    
+    .segment-A-top .product-nav-container ul {
+        display: flex;
+        flex-wrap: wrap;  
+        justify-content: center;
     }
-    .segment-A{
-        flex-direction: column;
-        text-align: center;
+    .segment-A-top .product-nav-container li {
+        margin: 10px 15px;  
     }
-    #img1{
-        margin-left: 0px;
-        margin-top: 20px;
-    }
-    .segment-B{
-        flex-direction: column;
-        text-align: center;
-    }
-    .segment-C{
-        flex-direction: column;
-        text-align: center;
-    }
-    #A{
-        width: 300px;
-        height: 220px;
+
+     
+    .segment-C > div {
+        width: calc(33.333% - 20px);  
+        margin-bottom: 20px;
     }
 }
+
+
+
+@media (max-width: 768px) {
+    nav, .segment-A, .segment-B, .segment-C {
+        padding: 15px 20px;
+    }
+
+   
+    .menu-toggle {
+        display: block;
+        order: 1;
+    }
+ 
+    .nav-links-container {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        background-color: rgb(247,246,244); 
+    }
+    .nav-links-container.active {
+        display: flex;
+    }
+    nav li {
+        display: block;
+        margin: 10px 0;
+        text-align: center;
+    }
+    nav img[alt=""], .fes {
+        display: none;
+    }
+    .nav-links-container ul {
+        flex-direction: column;
+    }
+
+     
+    .segment-A-top {
+        flex-direction: column;  
+        align-items: center;
+    }
+    .segment-A-top .product-nav-container {
+        width: 100%;
+        margin: 15px 0;
+    }
+    .segment-A-top .product-nav-container ul {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        padding: 0;
+    }
+    .segment-A-top li {
+        margin: 5px 10px;  
+        font-size: 0.9em;
+    }
+
+
     
+    .hero-segment {
+        flex-direction: column;  
+        text-align: center;
+    }
+    .h1a {
+        font-size: 2.5em; 
+    }
+    #img1 {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        order: -1;  
+    }
+    .text {
+        width: 100%;
+        max-width: 90%;
+        margin: 10px auto;
+    }
+
+    
+    .segment-C {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .segment-C > div {
+        width: 100%;  
+        margin-top: 15px !important;
+        margin-right: 0 !important;
+    }
+    #A, .btn {
+        width: 100%;
+    }
+
+     
+    .last {
+        margin: 50px 20px;
+    }
+}

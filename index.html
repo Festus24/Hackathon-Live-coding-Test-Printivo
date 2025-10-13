@@ -8,29 +8,36 @@
 </head>
 <body>
     <nav class="nav">
-       <ul>
-        <li><a href="http://">Cost calculator</a></li>
-        <li><a href="http://">Discover stores</a></li>
-        <li><a href="http://">Track orders</a></li>
-       </ul> 
-       <div>
-        <h4>Need help? Call: <br><span>+2347069000083 </span>  or <span>+2349035000505</span></h4>
-       </div>
-       <img src="./img/whats.png" alt="">
-       <div class="fes">
-       <img src="./img/flag.png" id="flag"> Nigeria
+       <button class="menu-toggle" aria-label="Toggle navigation">
+           <span class="hamburger-icon"></span>
+       </button>
+       <div class="nav-links-container">
+            <ul>
+                <li><a href="http://">Cost calculator</a></li>
+                <li><a href="http://">Discover stores</a></li>
+                <li><a href="http://">Track orders</a></li>
+            </ul> 
+            <div>
+                <h4>Need help? Call: <br><span>+2347069000083 </span>  or <span>+2349035000505</span></h4>
+            </div>
+            <img src="./img/whats.png" alt="">
+            <div class="fes">
+                <img src="./img/flag.png" id="flag"> Nigeria
+            </div>
        </div>
     </nav>
-    <div class="segment-A">
+    <div class="segment-A segment-A-top"> 
         <img src="./img/p.png" alt="">
-        <ul>
-            <li><a href="http://">All products</a></li>
-            <li><a href="http://">Become a Reseller</a></li>
-            <li><a href="http://">Merch Store</a></li>
-            <li><a href="http://"> Marketplace</a></li>
-            <li><a href="http://">Sign in</a></li>
-            <li><a href="http://">Create Account</a></li>
-        </ul>
+        <div class="product-nav-container">
+            <ul>
+                <li><a href="http://">All products</a></li>
+                <li><a href="http://">Become a Reseller</a></li>
+                <li><a href="http://">Merch Store</a></li>
+                <li><a href="http://"> Marketplace</a></li>
+                <li><a href="http://">Sign in</a></li>
+                <li><a href="http://">Create Account</a></li>
+            </ul>
+        </div>
         <img src="./img/bas.png" alt="">
     </div>
      <div class="segment-A">
@@ -243,6 +250,17 @@
       <p style="color: rgb(80,102,131); font-size: 25px;">Our print services and solutions are trusted by these brands and <br> over 15,000 other businesses in Nigeria.</p>
       <img src="./img/last.png" alt="">
     </div>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.menu-toggle');
+            const navContainer = document.querySelector('.nav-links-container');
+
+            navToggle.addEventListener('click', function() {
+                // Toggles the 'active' class to show/hide the menu
+                navContainer.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
